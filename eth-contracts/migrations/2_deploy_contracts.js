@@ -9,6 +9,6 @@ module.exports = function(deployer,network,accounts) {
   let verifierAddress = accounts[0];
 
   deployer.deploy(CustomERC721Token, name, symbol );
-  deployer.deploy(SquareVerifier);
+  //deployer.deploy(SquareVerifier);
   deployer.deploy(SolnSquareVerifier, verifierAddress, name, symbol );
 };

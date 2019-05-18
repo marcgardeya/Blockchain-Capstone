@@ -25,7 +25,8 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = "sorry table exist bless camp frown topple hospital grain retreat theory kitchen";
+//var mnemonic = "sorry table exist bless camp frown topple hospital grain retreat theory kitchen";
+var mnemonic = "loyal amount brave rude drama spawn siren like gossip beyond observe sail"
 
 module.exports = {
   /**
@@ -50,6 +51,13 @@ module.exports = {
       port: 7545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
      },
+
+     rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/15badb5411c7429b9855f99a440dfb3c")
+      },
+      network_id: 4
+    }
 
     // Another network with more advanced options...
     // advanced: {
