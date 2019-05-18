@@ -26,6 +26,7 @@ contract SolnSquareVerifier is CustomERC721Token {
     // TODO define a solutions struct that can hold an index & an address
 
     struct Solution {
+        bool valid;
         address origin;
     }
 
@@ -34,11 +35,12 @@ contract SolnSquareVerifier is CustomERC721Token {
 
     // TODO define a mapping to store unique solutions submitted
 
-    mapping(bytes32 => Solution) unique_solutions;
+    mapping(address => Solution[]) private solutions;
+    mapping(bytes32 => bool) private unique;
 
     // TODO Create an event to emit when a solution is added
 
-    event SolutionAdded();
+    event SolutionAdded(address);
 
     // TODO Create a function to add the solutions to the array and emit the event
 
@@ -47,18 +49,31 @@ contract SolnSquareVerifier is CustomERC721Token {
                 uint[2][2] calldata b,
                 uint[2] calldata c,
                 uint[2] calldata input
-            ) external
+            ) external returns(bool)
     {
         bytes32 key = keccak256(abi.encodePacked(a, b, c, input));
-        unique_solutions[key] = Solution({origin:msg.sender});
-        emit SolutionAdded();
+        if( !unique[key] ) { return false; }
+
+        bool valid = verifierContract.verifyTx(a, b, c, input);
+
+        unique[key] = true;
+        solutions[msg.sender].push( Solution({valid:valid, origin:msg.sender}) );
+
+        emit SolutionAdded(msg.sender);
+        return true;
     }
 
     // TODO Create a function to mint new NFT only after the solution has been verified
     //  - make sure the solution is unique (has not been used before)
-    //  - make sure you handle metadata as well as tokenSuply
+    //  - make sure you handle metadata as well as tokenSupply
 
     function mint(address to, uint256 tokenId) public returns(bool) {
+
+        bool isValid = false;
+        for(uint256 s=1; s<solutions[msg.sender].length; s++ ) {
+            if( solutions[msg.sender][s].valid == true ) { isValid = true; break; }
+        }
+        if( !isValid ) { return false; }
 
         return CustomERC721Token.mint(to, tokenId);
     }

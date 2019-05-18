@@ -47,7 +47,7 @@ contract('TestERC721Mintable', accounts => {
 
     describe('have ownership properties', function () {
         beforeEach(async function () { 
-            this.contract = await CustomERC721Token.new({from: account_one});
+            this.contract = await CustomERC721Token.new("Name", "Symbol", {from: account_one});
         })
 
         it('should fail when minting when address is not contract owner', async function () { 
