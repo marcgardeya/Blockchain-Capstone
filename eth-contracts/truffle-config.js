@@ -24,8 +24,8 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-//var HDWalletProvider = require("truffle-hdwallet-provider");
-//var mnemonic = "sorry table exist bless camp frown topple hospital grain retreat theory kitchen";
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = "sorry table exist bless camp frown topple hospital grain retreat theory kitchen";
 
 module.exports = {
   /**
@@ -47,7 +47,7 @@ module.exports = {
     //
      development: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
      },
 
