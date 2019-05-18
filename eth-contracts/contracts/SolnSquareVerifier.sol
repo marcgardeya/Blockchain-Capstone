@@ -23,31 +23,43 @@ contract SolnSquareVerifier is CustomERC721Token {
         verifierContract = Verifier(verifierAddress);
     }
 
-/*
     // TODO define a solutions struct that can hold an index & an address
 
-    struct {
-        uint256 index;
-        address a;
-    } Solution;
+    struct Solution {
+        address origin;
+    }
 
     // TODO define an array of the above struct
-    Solution[] solutions;
+    // not needed
 
     // TODO define a mapping to store unique solutions submitted
-    mapping(?? => Solution) uniqueSolutions;
+
+    mapping(bytes32 => Solution) unique_solutions;
 
     // TODO Create an event to emit when a solution is added
 
-
+    event SolutionAdded();
 
     // TODO Create a function to add the solutions to the array and emit the event
 
-
+    function addSolution(
+                uint[2] calldata a,
+                uint[2][2] calldata b,
+                uint[2] calldata c,
+                uint[2] calldata input
+            ) external
+    {
+        bytes32 key = keccak256(abi.encodePacked(a, b, c, input));
+        unique_solutions[key] = Solution({origin:msg.sender});
+        emit SolutionAdded();
+    }
 
     // TODO Create a function to mint new NFT only after the solution has been verified
     //  - make sure the solution is unique (has not been used before)
-    //  - make sure you handle metadata as well as tokenSuplly
-*/
+    //  - make sure you handle metadata as well as tokenSuply
 
+    function mint(address to, uint256 tokenId) public returns(bool) {
+
+        return CustomERC721Token.mint(to, tokenId);
+    }
 }
