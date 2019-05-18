@@ -545,7 +545,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 
 contract CustomERC721Token is ERC721Metadata {
 
-    constructor() ERC721Metadata("CustomERC721Token", "CT", "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/") public {
+    constructor(string memory name, string memory symbol) ERC721Metadata(name, symbol, "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/") public {
     }
 
     function mint(address to, uint256 tokenId) public returns(bool) {
