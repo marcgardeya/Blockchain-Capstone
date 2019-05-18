@@ -1,4 +1,4 @@
-var CapstoneMG = artifacts.require('CapstoneMG');
+var CustomERC721Token = artifacts.require('CustomERC721Token');
 
 contract('TestERC721Mintable', accounts => {
 
@@ -7,7 +7,7 @@ contract('TestERC721Mintable', accounts => {
 
     describe('match erc721 spec', function () {
         beforeEach(async function () { 
-            this.contract = await CapstoneMG.new({from: account_one});
+            this.contract = await CustomERC721Token.new({from: account_one});
 
             // TODO: mint multiple tokens
             this.contract.mint(account_two,100);
