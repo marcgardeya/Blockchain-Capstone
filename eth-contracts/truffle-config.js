@@ -25,8 +25,8 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
-//var mnemonic = "sorry table exist bless camp frown topple hospital grain retreat theory kitchen";
-var mnemonic = "loyal amount brave rude drama spawn siren like gossip beyond observe sail"
+var mnemonic = "sorry table exist bless camp frown topple hospital grain retreat theory kitchen";
+//var mnemonic = "loyal amount brave rude drama spawn siren like gossip beyond observe sail"
 
 module.exports = {
   /**
