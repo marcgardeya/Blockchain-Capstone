@@ -18,12 +18,13 @@ contract('TestSolnSquareVerifier', accounts => {
 
         // Test if a new solution can be added
         it('should add a solution', async function () { 
-            this.contract.addSolution(p.proof.a, p.proof.b, p.proof.c, p.inputs);
+            let rc = this.contract.addSolution(p.proof.a, p.proof.b, p.proof.c, p.inputs);
+            assert(rc, true, "could not add solution to verifier");
         })
 
         // Test if an ERC721 token can be minted
         it('should mint ERC721 token', async function () { 
-            this.contract.mint(account_two, 2);
+            this.contract.mint(account_two, 2, {from:account_one});
         })
     })
 })
