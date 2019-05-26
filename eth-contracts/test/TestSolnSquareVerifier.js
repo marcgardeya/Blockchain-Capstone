@@ -3,6 +3,8 @@ var SolnSquareVerifier = artifacts.require('SolnSquareVerifier');
 const fs = require('fs');
 let p = JSON.parse(fs.readFileSync("../zokrates/code/square/proof.json"));
 
+const truffleAssert = require('truffle-assertions');
+
 
 contract('TestSolnSquareVerifier', accounts => {
 
@@ -18,13 +20,14 @@ contract('TestSolnSquareVerifier', accounts => {
 
         // Test if a new solution can be added
         it('should add a solution', async function () { 
-            let rc = this.contract.addSolution(p.proof.a, p.proof.b, p.proof.c, p.inputs);
-            assert(rc, true, "could not add solution to verifier");
+            let result = await this.contract.addSolution(p.proof.a, p.proof.b, p.proof.c, p.inputs,{from:account_one});
+            truffleAssert.eventEmitted(result, 'SolutionAdded', (event) => { return true; }, 'missing SolutionAdded event');
         })
 
         // Test if an ERC721 token can be minted
-        it('should mint ERC721 token', async function () { 
-            this.contract.mint(account_two, 2, {from:account_one});
-        })
+        //it('should mint ERC721 token', async function () { 
+        //    let rc = this.contract.mint.call(account_one, 2, {from:account_one});
+        //    assert.equal(rc, true, "token can not be minted");
+        //})
     })
 })

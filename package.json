@@ -15,9 +15,10 @@
   },
   "dependencies": {
     "openzeppelin-solidity": "2.2.0",
-    "solc": "^0.5.2",
+    "solc": "^0.5.8",
     "solc-js": "^0.5.2",
-    "truffle": "^5.0.18"
+    "truffle": "^5.0.19",
+    "truffle-assertions": "^0.9.0"
   },
   "repository": {
     "type": "git",

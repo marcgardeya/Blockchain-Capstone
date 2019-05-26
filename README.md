@@ -17,6 +17,12 @@ To run truffle tests:
 
 `truffle test`
 
+Make sure to
+
+`npm install truffle-assertions`
+
+and use solc >=0.5.2
+
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
