@@ -6,9 +6,11 @@ var SolnSquareVerifier = artifacts.require("SolnSquareVerifier.sol");
 module.exports = function(deployer,network,accounts) {
   let name = "Some Name";
   let symbol = "SMBL";
-  let verifierAddress = accounts[0];
 
   deployer.deploy(CustomERC721Token, name, symbol );
-  deployer.deploy(SquareVerifier);
-  deployer.deploy(SolnSquareVerifier, verifierAddress, name, symbol );
+  deployer.deploy(SquareVerifier)
+  .then(() => {
+    return deployer.deploy(SolnSquareVerifier, SquareVerifier.address, name, symbol );
+  }
+  )
 };

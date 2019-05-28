@@ -55,6 +55,8 @@ contract SolnSquareVerifier is CustomERC721Token {
 
     // TODO Create a function to add the solutions to the array and emit the event
 
+    // check out https://knowledge.udacity.com/questions/39621
+    
     function addSolution(
             uint[2] calldata a,
             uint[2] calldata a_p,
