@@ -26,8 +26,8 @@ contract('TestSolnSquareVerifier', accounts => {
 
         // Test if an ERC721 token can be minted
         //it('should mint ERC721 token', async function () { 
-        //    let rc = this.contract.mint.call(account_one, 2, {from:account_one});
-        //    assert.equal(rc, true, "token can not be minted");
+            //let rc = this.contract.mint(account_one, 2, {from:account_one});
+            //assert.equal(rc, true, "token can not be minted");
         //})
     })
 })
