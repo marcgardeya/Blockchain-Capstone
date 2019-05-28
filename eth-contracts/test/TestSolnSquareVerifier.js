@@ -20,7 +20,7 @@ contract('TestSolnSquareVerifier', accounts => {
 
         // Test if a new solution can be added
         it('should add a solution', async function () { 
-            let result = await this.contract.addSolution(p.proof.a, p.proof.b, p.proof.c, p.inputs,{from:account_one});
+            let result = await this.contract.addSolution(p.proof.A, p.proof.A_p, p.proof.b, p.proof.B_p, p.proof.c, p.proof.C_p, p.proof.H, p.proof.K, p.input,{from:account_one});
             truffleAssert.eventEmitted(result, 'SolutionAdded', (event) => { return true; }, 'missing SolutionAdded event');
         })
 
