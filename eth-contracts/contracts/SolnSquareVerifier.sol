@@ -86,11 +86,10 @@ contract SolnSquareVerifier is CustomERC721Token {
     function mint(address to, uint256 tokenId) public returns(bool) {
 
         bool isValid = false;
-        for(uint256 s=1; s<solutions[msg.sender].length; s++ ) {
+        for(uint256 s=0; s<solutions[msg.sender].length; s++ ) {
             if( solutions[msg.sender][s].valid == true ) { isValid = true; break; }
         }
         if( !isValid ) { return false; }
-        return false;
 
         return CustomERC721Token.mint(to, tokenId);
     }
