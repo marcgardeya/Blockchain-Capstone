@@ -1,3 +1,4 @@
+var SquareVerifier = artifacts.require("Verifier.sol");
 var SolnSquareVerifier = artifacts.require('SolnSquareVerifier');
 
 const fs = require('fs');
@@ -15,7 +16,7 @@ contract('TestSolnSquareVerifier', accounts => {
 
     describe('test square verfier solution', function () {
         beforeEach(async function () { 
-            this.contract = await SolnSquareVerifier.new(account_one, "Name", "Symbol");
+            this.contract = await SolnSquareVerifier.new(SquareVerifier.address, "Name", "Symbol");
         })
 
         // Test if a new solution can be added

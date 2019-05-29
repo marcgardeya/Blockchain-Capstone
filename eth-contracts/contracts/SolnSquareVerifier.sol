@@ -72,7 +72,6 @@ contract SolnSquareVerifier is CustomERC721Token {
         bytes32 key = 0; //keccak256(abi.encodePacked(a, b, c, input));
         if( !unique[key] ) {
             bool valid = verifierContract.verifyTx(a,a_p,b,b_p,c,c_p,h,k,input);
-
             unique[key] = true;
             solutions[msg.sender].push( Solution({valid:valid, origin:msg.sender}) );
 
