@@ -50,31 +50,34 @@ Rinkeby deployment
 
    Deploying 'Verifier'
    --------------------
-   > transaction hash:    0x3f65ad0a4d14efc74aefafbe92115c081e20642e14b6ea09163fc8bd2474d7c2
+   > transaction hash:    0x631afc5bc3e9462d98c87acda07cae40a354e95daaf2b18ddb8f68b906a92d7b
    > Blocks: 1            Seconds: 9
-   > contract address:    0xcD71e7d6Ee52A5a4204E5696B5960641eba81700
-   > block number:        4467215
-   > block timestamp:     1559137867
+   > contract address:    0xaBc42eF74b66Ba425efCD685D6F3eA310C6798ed
+   > block number:        4471876
+   > block timestamp:     1559207791
    > account:             0x0b136f26E54AC3E4cE9aF8450D95B25c26c78B24
-   > balance:             0.707091421
+   > balance:             0.456612801
    > gas used:            1774678
    > gas price:           20 gwei
    > value sent:          0 ETH
    > total cost:          0.03549356 ETH
 
+
    Deploying 'SolnSquareVerifier'
    ------------------------------
-   > transaction hash:    0xde3546450d0fc2ef080080f6b860924cc7b8a3d480d2c1427e82c437cb6f4a3f
-   > Blocks: 0            Seconds: 4
-   > contract address:    0x8118124917e2350418F68d56664076963903DfAe
-   > block number:        4467216
-   > block timestamp:     1559137882
+   > transaction hash:    0xda1f1e9554a9731e5f737c656d4a0a7217ae0c6e02654edd206fa0a70fd6b566
+   > Blocks: 1            Seconds: 9
+   > contract address:    0xE4616a305e38708EE8bE2870df927Bf447560e9a
+   > block number:        4471877
+   > block timestamp:     1559207806
    > account:             0x0b136f26E54AC3E4cE9aF8450D95B25c26c78B24
-   > balance:             0.577156341
-   > gas used:            6496754
+   > balance:             0.325614221
+   > gas used:            6549929
    > gas price:           20 gwei
    > value sent:          0 ETH
+   > total cost:          0.13099858 ETH
 
+   
 Full Rinkeby deployment log at eth-contracts/migrations/log
 
 
