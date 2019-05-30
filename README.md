@@ -48,6 +48,20 @@ and use solc >=0.5.2
 
 Rinkeby deployment
 
+   Deploying 'Verifier'
+   --------------------
+   > transaction hash:    0x3f65ad0a4d14efc74aefafbe92115c081e20642e14b6ea09163fc8bd2474d7c2
+   > Blocks: 1            Seconds: 9
+   > contract address:    0xcD71e7d6Ee52A5a4204E5696B5960641eba81700
+   > block number:        4467215
+   > block timestamp:     1559137867
+   > account:             0x0b136f26E54AC3E4cE9aF8450D95B25c26c78B24
+   > balance:             0.707091421
+   > gas used:            1774678
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03549356 ETH
+
    Deploying 'SolnSquareVerifier'
    ------------------------------
    > transaction hash:    0xde3546450d0fc2ef080080f6b860924cc7b8a3d480d2c1427e82c437cb6f4a3f
