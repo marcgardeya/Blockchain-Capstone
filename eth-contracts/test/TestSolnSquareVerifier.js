@@ -23,6 +23,9 @@ contract('TestSolnSquareVerifier', accounts => {
         it('should add a solution', async function () { 
             let result = await this.contract.addSolution(p.proof.A, p.proof.A_p, p.proof.B, p.proof.B_p, p.proof.C, p.proof.C_p, p.proof.H, p.proof.K, p.input,{from:account_one});
             truffleAssert.eventEmitted(result, 'SolutionAdded', (event) => { return true; }, 'missing SolutionAdded event');
+
+            result = await this.contract.addSolution(p.proof.A, p.proof.A_p, p.proof.B, p.proof.B_p, p.proof.C, p.proof.C_p, p.proof.H, p.proof.K, p.input,{from:account_one});
+            truffleAssert.eventNotEmitted(result, 'SolutionAdded', (event) => { return true; }, 'SolutionAdded event must not emit');
         })
 
         // Test if an ERC721 token can be minted
